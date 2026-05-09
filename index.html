@@ -316,6 +316,64 @@ tbody td{padding:11px 14px;font-size:13px;color:var(--text)}
 ::-webkit-scrollbar{width:5px;height:5px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--border2);border-radius:99px}
+
+/* ── AREA MANAGER PAGE ── */
+.am-search-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
+.am-overview{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;margin-bottom:20px;box-shadow:var(--shadow-sm)}
+.am-overview-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px}
+.am-cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:24px}
+.am-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow-sm);cursor:pointer;transition:all .18s;position:relative;overflow:hidden}
+.am-card:hover{box-shadow:var(--shadow);transform:translateY(-2px);border-color:var(--accent)}
+.am-card.selected{border-color:var(--accent);box-shadow:0 0 0 2px rgba(14,165,233,.18),var(--shadow)}
+.am-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),#34d399)}
+.am-card-name{font-size:14px;font-weight:700;color:var(--text);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.am-card-count{font-size:11px;color:var(--text-dim);font-family:'IBM Plex Mono',monospace;background:var(--surface2);padding:2px 7px;border-radius:4px}
+.am-card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px}
+.am-stat{text-align:center;padding:7px 4px;border-radius:7px}
+.am-stat.c{background:#d1fae5;border:1px solid #6ee7b7}
+.am-stat.ip{background:#fef3c7;border:1px solid #fcd34d}
+.am-stat.nc{background:var(--gray-light);border:1px solid var(--border)}
+.am-stat-val{font-size:18px;font-weight:700;font-family:'IBM Plex Mono',monospace;line-height:1}
+.am-stat.c .am-stat-val{color:#059669}.am-stat.ip .am-stat-val{color:#d97706}.am-stat.nc .am-stat-val{color:#64748b}
+.am-stat-lbl{font-size:9px;color:var(--text-dim);margin-top:2px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.am-mini-bar{height:5px;background:var(--gray-light);border-radius:99px;overflow:hidden;display:flex;margin-bottom:5px}
+.am-mini-bar .c{background:#059669;height:100%}.am-mini-bar .ip{background:#d97706;height:100%}
+.am-pct{font-size:11px;color:var(--text-muted);font-family:'IBM Plex Mono',monospace;text-align:right}
+.am-detail-panel{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);margin-bottom:24px;animation:fadeUp .2s ease both}
+.am-detail-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.am-detail-name{font-size:16px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px}
+.am-detail-kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+@media(max-width:640px){.am-detail-kpi{grid-template-columns:repeat(2,1fr)}}
+.am-detail-kpi-card{padding:12px 14px;border-radius:10px;text-align:center}
+.am-dkc.total{background:var(--accent-bg);border:1px solid #bae6fd}
+.am-dkc.complete{background:#d1fae5;border:1px solid #6ee7b7}
+.am-dkc.inprogress{background:#fef3c7;border:1px solid #fcd34d}
+.am-dkc.pending{background:var(--gray-light);border:1px solid var(--border)}
+.am-dkc-val{font-size:26px;font-weight:700;font-family:'IBM Plex Mono',monospace;line-height:1}
+.am-dkc.total .am-dkc-val{color:var(--accent-dark)}
+.am-dkc.complete .am-dkc-val{color:#059669}
+.am-dkc.inprogress .am-dkc-val{color:#d97706}
+.am-dkc.pending .am-dkc-val{color:#64748b}
+.am-dkc-lbl{font-size:11px;color:var(--text-muted);font-weight:600;margin-top:3px}
+.am-detail-progress{margin-bottom:16px}
+.am-progress-bar{height:10px;background:var(--gray-light);border-radius:99px;overflow:hidden;display:flex;margin:6px 0}
+.am-progress-bar .c{background:linear-gradient(90deg,#059669,#34d399);height:100%}
+.am-progress-bar .ip{background:linear-gradient(90deg,#d97706,#fbbf24);height:100%}
+.am-branch-table{width:100%;border-collapse:collapse}
+.am-branch-table thead th{padding:8px 12px;font-size:10px;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:.8px;text-align:left;border-bottom:2px solid var(--border);background:var(--surface2);white-space:nowrap}
+.am-branch-table tbody tr{border-bottom:1px solid var(--border);transition:background .12s}
+.am-branch-table tbody tr:hover{background:#f8fafc}
+.am-branch-table tbody td{padding:10px 12px;font-size:13px;color:var(--text)}
+.am-overview-bar{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.am-ov-row{display:flex;align-items:center;gap:10px}
+.am-ov-name{font-size:12px;color:var(--text-muted);width:180px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.am-ov-track{flex:1;height:20px;background:var(--gray-light);border-radius:5px;overflow:hidden;display:flex}
+.am-ov-seg{height:100%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;transition:width .6s cubic-bezier(.4,0,.2,1)}
+.am-ov-seg.c{background:#bbf7d0;color:#059669}.am-ov-seg.ip{background:#fef08a;color:#92400e}.am-ov-seg.nc{background:#e2e8f0;color:#64748b}
+.am-ov-pct{font-size:11px;color:var(--accent-dark);font-family:'IBM Plex Mono',monospace;font-weight:700;width:36px;text-align:right;flex-shrink:0}
+.am-close-btn{padding:6px 14px;border:1px solid var(--border2);border-radius:7px;background:none;font-size:12px;color:var(--text-muted);cursor:pointer;font-family:'IBM Plex Sans Thai',sans-serif;transition:all .15s}
+.am-close-btn:hover{border-color:#fca5a5;color:#ef4444;background:#fff5f5}
+
 </style>
 </head>
 <body>
@@ -395,6 +453,7 @@ tbody td{padding:11px 14px;font-size:13px;color:var(--text)}
       <button class="nav-tab active" id="tab-dashboard" onclick="switchPage('dashboard')">📊 Dashboard</button>
       <button class="nav-tab hidden" id="tab-stores" onclick="switchPage('stores')">✏️ Edit Status</button>
       <button class="nav-tab hidden" id="tab-zones" onclick="switchPage('zones')">📋 Zone Detail</button>
+      <button class="nav-tab hidden" id="tab-area" onclick="switchPage('area')">👤 Area Manager</button>
     </div>
   </div>
 
@@ -477,6 +536,67 @@ tbody td{padding:11px 14px;font-size:13px;color:var(--text)}
           </div>
         </div>
       </div>
+
+      <!-- AREA MANAGER -->
+      <div id="page-area" class="page">
+        <div class="am-search-bar">
+          <span class="filter-label">🔍 ค้นหา Area Manager :</span>
+          <input type="text" class="search-input" id="amSearch" placeholder="พิมพ์ชื่อ AM..." oninput="renderAreaManager()">
+          <div class="filter-divider"></div>
+          <button class="filter-btn active" onclick="setAmFilter('all',this)" id="amFilter-all">ทั้งหมด</button>
+          <button class="filter-btn" onclick="setAmFilter('complete',this)" id="amFilter-complete">✅ Complete</button>
+          <button class="filter-btn" onclick="setAmFilter('inprogress',this)" id="amFilter-inprogress">🔄 In Progress</button>
+          <button class="filter-btn" onclick="setAmFilter('pending',this)" id="amFilter-pending">⏸ Pending</button>
+        </div>
+
+        <!-- Overview Chart Section -->
+        <div class="am-overview">
+          <div class="am-overview-title">📊 Area Manager Overview — ภาพรวมทุก Area Manager</div>
+          <div class="am-overview-bar" id="amOverviewBar"></div>
+        </div>
+
+        <!-- AM Cards Grid -->
+        <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:7px">
+          รายการ Area Manager <span id="amCardCount" style="font-size:11px;font-weight:400;color:var(--text-dim);background:var(--gray-light);padding:2px 8px;border-radius:4px"></span>
+        </div>
+        <div class="am-cards-grid" id="amCardsGrid"></div>
+
+        <!-- Detail Panel (shown when AM card is clicked) -->
+        <div class="am-detail-panel" id="amDetailPanel" style="display:none">
+          <div class="am-detail-header">
+            <div class="am-detail-name">👤 <span id="amDetailName"></span></div>
+            <button class="am-close-btn" onclick="closeAmDetail()">✕ ปิด</button>
+          </div>
+          <div class="am-detail-kpi">
+            <div class="am-detail-kpi-card am-dkc total"><div class="am-dkc-val" id="amDTotal">0</div><div class="am-dkc-lbl">Total</div></div>
+            <div class="am-detail-kpi-card am-dkc complete"><div class="am-dkc-val" id="amDComplete">0</div><div class="am-dkc-lbl">Complete</div></div>
+            <div class="am-detail-kpi-card am-dkc inprogress"><div class="am-dkc-val" id="amDInProg">0</div><div class="am-dkc-lbl">In Progress</div></div>
+            <div class="am-detail-kpi-card am-dkc pending"><div class="am-dkc-val" id="amDPending">0</div><div class="am-dkc-lbl">Not Started</div></div>
+          </div>
+          <div class="am-detail-progress">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+              <span style="font-size:12px;font-weight:700;color:var(--text)">Completion Progress</span>
+              <span style="font-size:14px;font-weight:700;font-family:'IBM Plex Mono',monospace;color:#059669" id="amDPct">0%</span>
+            </div>
+            <div class="am-progress-bar"><div class="c" id="amBarC" style="width:0%"></div><div class="ip" id="amBarIP" style="width:0%"></div></div>
+            <div class="progress-legend">
+              <div class="legend-item"><div class="legend-dot" style="background:#059669"></div>Complete</div>
+              <div class="legend-item"><div class="legend-dot" style="background:#d97706"></div>In Progress</div>
+              <div class="legend-item"><div class="legend-dot" style="background:#94a3b8"></div>Not Started</div>
+            </div>
+          </div>
+          <div style="font-size:12px;font-weight:700;color:var(--text);margin-bottom:10px;padding-top:8px;border-top:1px solid var(--border)">รายสาขา</div>
+          <div class="table-scroll">
+            <table class="am-branch-table">
+              <thead><tr>
+                <th>Code</th><th>ชื่อสาขา</th><th>Zone</th><th>Regional</th><th>Status</th>
+              </tr></thead>
+              <tbody id="amDetailTable"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -796,13 +916,14 @@ function doLogin() {
 
 function setupRoleUI() {
   if (currentRole === 'admin') {
-    ['tab-dashboard','tab-stores','tab-zones'].forEach(id => document.getElementById(id).classList.remove('hidden'));
+    ['tab-dashboard','tab-stores','tab-zones','tab-area'].forEach(id => document.getElementById(id).classList.remove('hidden'));
     switchPage('dashboard');
   } else {
     // user (soa): dashboard only — read-only view
     document.getElementById('tab-dashboard').classList.remove('hidden');
     document.getElementById('tab-stores').classList.add('hidden');
     document.getElementById('tab-zones').classList.add('hidden');
+    document.getElementById('tab-area').classList.remove('hidden');
     // hide filter bar edit controls and store edit interaction
     switchPage('dashboard');
   }
@@ -864,6 +985,7 @@ function getStats(zones) {
 function renderAll() {
   if (!currentRole) return;
   renderKPI(); renderRegionals(); renderBarChart(); renderStores(); renderZoneTable();
+  if (currentPage==='area') renderAreaManager();
 }
 
 function renderKPI() {
@@ -1030,9 +1152,10 @@ document.getElementById('modalOverlay').addEventListener('click', e=>{ if(e.targ
 // ════════════════════════════════════════════════
 function switchPage(page) {
   currentPage=page;
+  if (page==='area') setTimeout(renderAreaManager, 50);
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   const el=document.getElementById('page-'+page); if(el) el.classList.add('active');
-  ['dashboard','stores','zones'].forEach(p=>{ const t=document.getElementById('tab-'+p); if(t) t.classList.toggle('active',p===page); });
+  ['dashboard','stores','zones','area'].forEach(p=>{ const t=document.getElementById('tab-'+p); if(t) t.classList.toggle('active',p===page); });
   renderAll();
 }
 
@@ -1130,6 +1253,235 @@ async function init() {
   await connectFirebase();
   startPolling();   // start 10-second polling fallback after initial load
 }
+
+
+// ════════════════════════════════════════════════
+//  AREA MANAGER DATA
+// ════════════════════════════════════════════════
+const AREA_MANAGER_DATA = {
+  "Kanda Prasert": ["ST7","ST32","ST37","ST74","ST80","ST102","ST157","ST171"],
+  "Ornanong Sangfai": ["ST4","ST17","ST18","ST78","ST111","ST122","ST127","ST135","ST145","ST155","ST301"],
+  "Pannawich Pathomwattananurak": ["ST10","ST12","ST24","ST48","ST55","ST61","ST63","ST65","ST107","ST136","ST159","ST161","ST172"],
+  "Pongsiri Kamsaengdee": ["ST11","ST16","ST45","ST56","ST70","ST73","ST89","ST119","ST146","ST158"],
+  "Sainan Lirdariyapongkul": ["ST9","ST22","ST29","ST35","ST59","ST69","ST85","ST104","ST163"],
+  "Sanur Chamram": ["ST13","ST27","ST31","ST43","ST62","ST64","ST71","ST75","ST76","ST77","ST105","ST153","ST166","ST169"],
+  "Sirada Phruksatrakul": ["ST8","ST25","ST38","ST47","ST51","ST54","ST114","ST120","ST130","ST141","ST144","ST164"],
+  "Suphanan Chanlaset": ["ST6","ST23","ST34","ST41","ST50","ST52","ST67","ST81","ST87","ST100","ST103","ST167","ST303"],
+  "Thitikarn Poolsawasd": ["ST2","ST21","ST83","ST115","ST121","ST138","ST147","ST150","ST165"],
+  "Thitiwat Yangyuenthiwat": ["ST19","ST36","ST39","ST46","ST49","ST53","ST68","ST72","ST110","ST125","ST149","ST152","ST160"],
+  "Tien-Hung Chou": ["ST1","ST3","ST42","ST57","ST86","ST96","ST108","ST113","ST117","ST118","ST123","ST124","ST126","ST129","ST133","ST137","ST139","ST140","ST142","ST143","ST148","ST151","ST156","ST175"],
+  "Uraiwan Nisup": ["ST14","ST20","ST28","ST33","ST58","ST79","ST106","ST116","ST170"],
+  "Wattarapoo Kanjana": ["ST5","ST15","ST26","ST30","ST40","ST44","ST60","ST66","ST82","ST84","ST101","ST109","ST128","ST131","ST132","ST134","ST154","ST162","ST168"]
+};
+
+// reverse map: storeCode -> amName
+const STORE_TO_AM = {};
+Object.entries(AREA_MANAGER_DATA).forEach(([am, stores]) => {
+  stores.forEach(s => { STORE_TO_AM[s] = am; });
+});
+
+// Store location names from raw zone data (fallback to code)
+const STORE_LOC_NAMES = {};
+RAW_ZONES.forEach(z => {
+  z.stores.forEach(s => {
+    if (!STORE_LOC_NAMES[s]) {
+      STORE_LOC_NAMES[s] = { zone: z.zone, regional: z.regional };
+    }
+  });
+});
+
+let currentAmFilter = 'all';
+let selectedAm = null;
+
+function getAmStats(stores) {
+  let c=0, ip=0, nc=0;
+  stores.forEach(s => {
+    const st = storeState[s]?.status || 'pending';
+    if (st==='complete') c++; else if (st==='inprogress') ip++; else nc++;
+  });
+  return { total: stores.length, complete: c, inprogress: ip, pending: nc };
+}
+
+function setAmFilter(val, btn) {
+  currentAmFilter = val;
+  document.querySelectorAll('.am-search-bar .filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderAreaManager();
+}
+
+function renderAreaManager() {
+  if (!currentRole) return;
+  renderAmOverview();
+  renderAmCards();
+  if (selectedAm) renderAmDetail(selectedAm);
+}
+
+function renderAmOverview() {
+  const entries = Object.entries(AREA_MANAGER_DATA).map(([am, stores]) => {
+    const s = getAmStats(stores);
+    const pct = s.total ? Math.round(s.complete / s.total * 100) : 0;
+    return { am, ...s, pct };
+  }).sort((a, b) => b.pct - a.pct);
+
+  document.getElementById('amOverviewBar').innerHTML = entries.map(e => {
+    const cp = e.total ? e.complete/e.total*100 : 0;
+    const ip = e.total ? e.inprogress/e.total*100 : 0;
+    const nc = e.total ? e.pending/e.total*100 : 0;
+    return `<div class="am-ov-row">
+      <div class="am-ov-name" title="${e.am}">${e.am}</div>
+      <div class="am-ov-track">
+        <div class="am-ov-seg c" style="width:${cp}%;min-width:${e.complete>0?'18px':'0'}">${e.complete>0?e.complete:''}</div>
+        <div class="am-ov-seg ip" style="width:${ip}%;min-width:${e.inprogress>0?'18px':'0'}">${e.inprogress>0?e.inprogress:''}</div>
+        <div class="am-ov-seg nc" style="width:${nc}%;min-width:${e.pending>0?'18px':'0'}">${e.pending>0?e.pending:''}</div>
+      </div>
+      <div class="am-ov-pct">${e.pct}%</div>
+    </div>`;
+  }).join('');
+}
+
+function renderAmCards() {
+  const search = (document.getElementById('amSearch')?.value || '').toLowerCase();
+  let entries = Object.entries(AREA_MANAGER_DATA).map(([am, stores]) => {
+    const s = getAmStats(stores);
+    const pct = s.total ? Math.round(s.complete / s.total * 100) : 0;
+    return { am, stores, ...s, pct };
+  });
+
+  if (search) entries = entries.filter(e => e.am.toLowerCase().includes(search));
+
+  if (currentAmFilter === 'complete') entries = entries.filter(e => e.pending === 0 && e.inprogress === 0);
+  else if (currentAmFilter === 'inprogress') entries = entries.filter(e => e.inprogress > 0 || (e.complete > 0 && e.pending > 0));
+  else if (currentAmFilter === 'pending') entries = entries.filter(e => e.complete === 0 && e.inprogress === 0);
+
+  entries.sort((a, b) => b.pct - a.pct);
+
+  document.getElementById('amCardCount').textContent = entries.length + ' คน';
+
+  document.getElementById('amCardsGrid').innerHTML = entries.map(e => {
+    const cp = e.total ? e.complete/e.total*100 : 0;
+    const ip = e.total ? e.inprogress/e.total*100 : 0;
+    const isSelected = selectedAm === e.am;
+    return `<div class="am-card${isSelected?' selected':''}" onclick="renderAmDetail('${e.am.replace(/'/g,"\'")}')">
+      <div class="am-card-name">👤 ${e.am} <span class="am-card-count">${e.total} สาขา</span></div>
+      <div class="am-card-stats">
+        <div class="am-stat c"><div class="am-stat-val">${e.complete}</div><div class="am-stat-lbl">Complete</div></div>
+        <div class="am-stat ip"><div class="am-stat-val">${e.inprogress}</div><div class="am-stat-lbl">In Prog</div></div>
+        <div class="am-stat nc"><div class="am-stat-val">${e.pending}</div><div class="am-stat-lbl">Pending</div></div>
+      </div>
+      <div class="am-mini-bar">
+        <div class="c" style="width:${cp}%"></div>
+        <div class="ip" style="width:${ip}%"></div>
+      </div>
+      <div class="am-pct">${e.pct}% Complete</div>
+    </div>`;
+  }).join('') || '<div style="color:var(--text-dim);font-size:13px;padding:20px;grid-column:1/-1">ไม่พบ Area Manager</div>';
+}
+
+function renderAmDetail(amName) {
+  selectedAm = amName;
+  const stores = AREA_MANAGER_DATA[amName] || [];
+  const s = getAmStats(stores);
+  const pct = s.total ? Math.round(s.complete / s.total * 100) : 0;
+
+  document.getElementById('amDetailName').textContent = amName;
+  document.getElementById('amDTotal').textContent = s.total;
+  document.getElementById('amDComplete').textContent = s.complete;
+  document.getElementById('amDInProg').textContent = s.inprogress;
+  document.getElementById('amDPending').textContent = s.pending;
+  document.getElementById('amDPct').textContent = pct + '%';
+  document.getElementById('amBarC').style.width = (s.total ? s.complete/s.total*100 : 0) + '%';
+  document.getElementById('amBarIP').style.width = (s.total ? s.inprogress/s.total*100 : 0) + '%';
+
+  const statusIcon = { complete:'✅', inprogress:'🔄', pending:'⏸' };
+  const statusLabel = { complete:'Complete', inprogress:'In Progress', pending:'Not Started' };
+  const statusPill = {
+    complete: 'sp-complete', inprogress: 'sp-inprogress', pending: 'sp-pending'
+  };
+
+  document.getElementById('amDetailTable').innerHTML = stores.map(code => {
+    const st = storeState[code]?.status || 'pending';
+    const info = STORE_LOC_NAMES[code] || {};
+    return `<tr>
+      <td style="font-family:'IBM Plex Mono',monospace;font-weight:700;color:var(--accent-dark)">${code}</td>
+      <td style="font-size:12px;color:var(--text-muted)">${getStoreName(code)}</td>
+      <td style="font-size:11px;color:var(--accent-dark);font-family:'IBM Plex Mono',monospace;font-weight:600">${info.zone||'-'}</td>
+      <td style="font-size:11px;color:var(--text-muted)">${info.regional||'-'}</td>
+      <td><span class="status-pill ${statusPill[st]}"><span class="sp-dot"></span>${statusLabel[st]}</span></td>
+    </tr>`;
+  }).join('');
+
+  const panel = document.getElementById('amDetailPanel');
+  panel.style.display = 'block';
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  // re-render cards to update selected state
+  renderAmCards();
+}
+
+function closeAmDetail() {
+  selectedAm = null;
+  document.getElementById('amDetailPanel').style.display = 'none';
+  renderAmCards();
+}
+
+// Helper: get short branch name from store code
+function getStoreName(code) {
+  const num = code.replace('ST','');
+  // find in raw zones
+  for (const z of RAW_ZONES) {
+    if (z.stores.includes(code)) {
+      // try to find in Excel data embedded below
+      break;
+    }
+  }
+  return AM_STORE_NAMES[code] || code;
+}
+
+// Store names embedded from Excel
+const AM_STORE_NAMES = {
+  "ST1":"สาขาลาดพร้าว","ST2":"สาขาแจ้งวัฒนะ","ST3":"สาขาศรีนครินทร์","ST4":"สาขาบางบอน",
+  "ST5":"สาขาชลบุรี","ST6":"สาขาเชียงใหม่","ST7":"สาขานครราชสีมา","ST8":"สาขารังสิต",
+  "ST9":"สาขาหาดใหญ่","ST10":"สาขาอุดรธานี","ST11":"สาขาพิษณุโลก","ST12":"สาขาขอนแก่น",
+  "ST13":"สาขาสุราษฎร์ธานี","ST14":"สาขาอุบลราชธานี","ST15":"สาขาระยอง","ST16":"สาขานครสวรรค์",
+  "ST17":"สาขาจรัญสนิทวงศ์","ST18":"สาขาสาทร","ST19":"สาขานครปฐม","ST20":"สาขาสุรินทร์",
+  "ST21":"สาขาสามเสน","ST22":"สาขานครศรีธรรมราช","ST23":"สาขาเชียงราย","ST24":"สาขาสกลนคร",
+  "ST25":"สาขาสุพรรณบุรี","ST26":"สาขาจันทบุรี","ST27":"สาขาภูเก็ต","ST28":"สาขาร้อยเอ็ด",
+  "ST29":"สาขาตรัง","ST30":"สาขาสระแก้ว","ST31":"สาขาเกาะสมุย","ST32":"สาขาบุรีรัมย์",
+  "ST33":"สาขาศรีสะเกษ","ST34":"สาขาลำพูน","ST35":"สาขากระบี่","ST36":"สาขาเพชรบุรี",
+  "ST37":"สาขาชัยภูมิ","ST38":"สาขาสระบุรี","ST39":"สาขาปราณบุรี","ST40":"สาขาฉะเชิงเทรา",
+  "ST41":"สาขาเชียงใหม่2","ST42":"สาขารามอินทรา","ST43":"สาขาชุมพร","ST44":"สาขาพัทยา",
+  "ST45":"สาขากำแพงเพชร","ST46":"สาขากาญจนบุรี","ST47":"สาขาลพบุรี","ST48":"สาขาหนองคาย",
+  "ST49":"สาขาราชบุรี","ST50":"สาขาแม่ริม","ST51":"สาขาอยุธยา","ST52":"สาขาลำปาง",
+  "ST53":"สาขาหัวหิน","ST54":"สาขาคลองหลวง","ST55":"สาขาเลย","ST56":"สาขาเพชรบูรณ์",
+  "ST57":"สาขาบางพลี","ST58":"สาขามุกดาหาร","ST59":"สาขาสตูล","ST60":"สาขาตราด",
+  "ST61":"สาขาชุมแพ","ST62":"สาขาราไวย์","ST63":"สาขานครพนม","ST64":"สาขาเกาะพะงัน",
+  "ST65":"สาขาบึงกาฬ","ST66":"สาขาพัทยาเหนือ","ST67":"สาขาแม่สาย","ST68":"สาขาศาลายา",
+  "ST69":"สาขาพัทลุง","ST70":"สาขาสุโขทัย","ST71":"สาขาป่าตอง","ST72":"สาขาสมุทรสาคร",
+  "ST73":"สาขาแม่สอด","ST74":"สาขาปากช่อง","ST75":"สาขาถลาง","ST76":"สาขาระนอง",
+  "ST77":"สาขาละไม","ST78":"สาขากัลปพฤกษ์","ST79":"สาขายโสธร","ST80":"สาขามหาสารคาม",
+  "ST81":"สาขาฝาง","ST82":"สาขานครนายก","ST83":"สาขานครอินทร์","ST84":"สาขาบ้านเพ",
+  "ST85":"สาขาทุ่งสง","ST86":"สาขาศรีนครินทร์2","ST87":"สาขาพะเยา","ST89":"สาขาพิษณุโลก2",
+  "ST96":"สาขาทาวน์อินทาวน์","ST100":"สาขาแพร่","ST101":"สาขาเกาะช้าง","ST102":"สาขานครราชสีมา2",
+  "ST103":"สาขาน่าน","ST104":"สาขาอ่าวนาง","ST105":"สาขากะรน","ST106":"สาขาวารินชำราบ",
+  "ST107":"สาขาหนองบัวลำภู","ST108":"สาขาหนองจอก","ST109":"สาขาแหลมฉบัง","ST110":"สาขาประจวบคีรีขันธ์",
+  "ST111":"สาขาเพชรเกษม","ST113":"สาขาวังหิน","ST114":"สาขาสิงห์บุรี","ST115":"สาขาบางบัวทอง",
+  "ST116":"สาขากาฬสินธุ์","ST117":"สาขาอุดมสุข","ST118":"สาขารามคำแหง(สัมมากร)","ST119":"สาขาพิจิตร",
+  "ST120":"สาขาปทุมธานี","ST121":"สาขาบดินทรเดชา","ST122":"สาขาประชาอุทิศ","ST123":"สาขาสุขุมวิท71",
+  "ST124":"สาขานวมินทร์70","ST125":"สาขาชะอำ","ST126":"สาขาอ่อนนุช","ST127":"สาขาสุขสวัสดิ์",
+  "ST128":"สาขากบินทร์บุรี","ST129":"สาขาลาดกระบัง","ST130":"สาขานาทองเจริญ","ST131":"สาขาบ่อวิน",
+  "ST132":"สาขาสัตหีบ","ST133":"สาขารามคำแหง24","ST134":"สาขาอมตะนคร","ST135":"สาขาบางคอแหลม",
+  "ST136":"สาขาขอนแก่น2","ST137":"สาขาวงศกร2","ST138":"สาขาเหม่งจ๋าย","ST139":"สาขาสุขุมวิท22",
+  "ST140":"สาขาถนนจันทน์","ST141":"สาขาลำลูกกา","ST142":"สาขาแพรกษา","ST143":"สาขาประดิษฐ์มนูธรรม",
+  "ST144":"สาขาตลาดรุ่งโรจน์","ST145":"สาขาพงษ์เพชร","ST146":"สาขาอุตรดิตถ์","ST147":"สาขาเมืองทอง",
+  "ST148":"สาขาเลียบคลอง2","ST149":"สาขาอ้อมน้อย","ST150":"สาขาสนามบินน้ำ","ST151":"สาขาเทพรักษ์",
+  "ST152":"สาขาสมุทรสงคราม","ST153":"สาขาเวียงสระ","ST154":"สาขาปราจีนบุรี","ST155":"สาขาปิ่นเกล้า",
+  "ST156":"สาขาสมุทรปราการ","ST157":"สาขานครราชสีมา3","ST158":"สาขานครสวรรค์2","ST159":"สาขาอุดรธานี2",
+  "ST160":"สาขามหาชัย","ST161":"สาขาขอนแก่น3","ST162":"สาขาอมตะนคร2","ST163":"สาขาสงขลา",
+  "ST164":"สาขาชัยนาท","ST165":"สาขาถนนศรีอยุธยา","ST166":"สาขาราไวย์2","ST167":"สาขาเชียงใหม่(จอมทอง)",
+  "ST168":"สาขาบ้านบึง(ชลบุรี)","ST169":"สาขาพังงา","ST170":"สาขาอำนาจเจริญ","ST171":"สาขาจอหอ(นครราชสีมา)",
+  "ST172":"สาขาบ้านไผ่","ST175":"สาขาแฮปปี้แทท","ST301":"สาขาพระราม4","ST303":"สาขาศิริมังคลาจารย์"
+};
+
 
 init();
 </script>
